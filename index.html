@@ -212,3 +212,222 @@
     }
 
     .buy:hover
+opacity: 0.75;
+    }
+
+    .about {
+      margin: 50px 6%;
+      padding: 70px;
+      border-radius: 28px;
+      background: #111;
+      color: white;
+      text-align: center;
+    }
+
+    .about h2 {
+      font-size: 50px;
+      letter-spacing: -3px;
+    }
+
+    .about p {
+      max-width: 550px;
+      margin: 25px auto 0;
+      line-height: 1.7;
+      color: #aaa;
+      font-size: 14px;
+    }
+
+    footer {
+      margin-top: 80px;
+      padding: 35px 6%;
+      display: flex;
+      justify-content: space-between;
+      border-top: 1px solid #eee;
+      font-size: 11px;
+      color: #888;
+    }
+
+    .cart {
+      position: fixed;
+      right: 25px;
+      bottom: 25px;
+      z-index: 200;
+      padding: 15px 20px;
+      border-radius: 50px;
+      background: #111;
+      color: white;
+      font-size: 12px;
+      font-weight: 700;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    }
+
+    max-width: 800px {
+      nav {
+        display: none;
+      }
+
+      .hero {
+        min-height: 60vh;
+      }
+
+      .products {
+        grid-template-columns: 1fr;
+      }
+
+      .product {
+        min-height: 440px;
+      }
+
+      .product-image {
+        height: 300px;
+      }
+
+      .about {
+        padding: 45px 25px;
+      }
+
+      .about h2 {
+        font-size: 38px;
+      }
+
+      footer {
+        flex-direction: column;
+        gap: 10px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="logo">DEFI</div>
+
+    <nav>
+      <a href="#new">Новинки</a>
+      <a href="#collection">Коллекция</a>
+      <a href="#about">О бренде</a>
+      <a href="#cart">Корзина</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <section class="hero">
+      <div>
+        <h1>DEFI</h1>
+        <p>Digital culture. Physical form.</p>
+      </div>
+    </section>
+
+    <section class="section" id="new">
+      <div class="section-title">
+        <h2>NEW DROP</h2>
+        <span>03 PRODUCTS</span>
+      </div>
+
+      <div class="products">
+
+        <article class="product">
+          <div class="product-image">
+            <div class="shirt">
+              <span>DEFI</span>
+            </div>
+          </div>
+
+          <div>
+            <div class="product-info">
+              <div>
+                <div class="product-name">DEFI TEE / BLACK</div>
+                <div class="product-type">Heavyweight T-Shirt</div>
+              </div>
+              <div class="price">€59</div>
+            </div>
+
+            <button class="buy" onclick="addToCart('DEFI TEE / BLACK', 59)">
+              ADD TO CART
+            </button>
+          </div>
+        </article>
+
+        <article class="product">
+          <div class="product-image">
+            <div class="shirt" style="background:#e7e7e7;">
+              <span style="color:#111;">DEFI</span>
+            </div>
+          </div>
+
+          <div>
+            <div class="product-info">
+              <div>
+                <div class="product-name">DEFI TEE / WHITE</div>
+                <div class="product-type">Heavyweight T-Shirt</div>
+              </div>
+              <div class="price">€59</div>
+            </div>
+
+            <button class="buy" onclick="addToCart('DEFI TEE / WHITE', 59)">
+              ADD TO CART
+            </button>
+          </div>
+        </article>
+
+        <article class="product">
+          <div class="product-image">
+            <div class="shirt" style="background:#555;">
+              <span>0X</span>
+            </div>
+          </div>
+
+          <div>
+            <div class="product-info">
+              <div>
+                <div class="product-name">DEFI 0X HOODIE</div>
+                <div class="product-type">Premium Hoodie</div>
+              </div>
+              <div class="price">€119</div>
+            </div>
+
+            <button class="buy" onclick="addToCart('DEFI 0X HOODIE', 119)">
+              ADD TO CART
+            </button>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <section class="about" id="about">
+      <h2>BUILT FOR THE NEXT BLOCK.</h2>
+      <p>
+        DEFI — независимый fashion-бренд, вдохновлённый криптокультурой,
+        цифровой свободой и новой экономикой.
+      </p>
+    </section>
+
+  </main>
+
+  <div class="cart" id="cart">
+    CART: <span id="cartCount">0</span>
+  </div>
+
+  <footer>
+    <span>© 2026 DEFI</span>
+    <span>Digital culture. Physical form.</span>
+  </footer>
+
+  <script>
+    let cartCount = 0;
+
+    function addToCart(product, price) {
+      cartCount++;
+      document.getElementById("cartCount").textContent = cartCount;
+
+      alert(
+        product + " добавлен в корзину.\nЦена: €" + price
+      );
+    }
+  </script>
+
+</body>
+</html>{
